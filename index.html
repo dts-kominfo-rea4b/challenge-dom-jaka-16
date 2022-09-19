@@ -70,7 +70,9 @@
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
       input.addEventListener('keyup', (event) => {
       	let keyCode = event.key;
+        if(keyCode === 'Enter'){
         	fnClickHandler(keyCode);
+        }
       });
 
       function createList(item){
