@@ -33,7 +33,7 @@
       <h2 id="todo-title" >todo-title</h2>
       <h3 id="todo-subtitle" >todo-subtitle</h3>
         <input type="text" id="todo-input" onkeypress="fnClickHandler(event)" >
-        <button type="submit" id="todo-submit" >Submit</button>
+        <button type="submit" id="todo-submit" onclick="fnClickHandler(event)" >Submit</button>
          <ul id="todo-output"></ul>
       </div>
 
@@ -49,14 +49,14 @@
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       function fnClickHandler(toDoItem) {
         let li = document.createElement('li');
-        if(toDoItem.key === 'enter'){
+        if(toDoItem.key === 'Enter'){
             li.textContent = input.value;
 			      input.value = '';
 			      output.appendChild(li);
-        }else if(toDoItem === 'click'){
-        	  let x = input.value;
+        }else if(toDoItem.key === undefined){
+            li.textContent = input.value;
 			      input.value = '';
-			      output.appendChild(createList(x));
+			      output.appendChild(li);
         }
        
       }
@@ -65,13 +65,7 @@
       // akan menjalankan fungsi fnClickHandler
       
       // TODO: register event onkeypress / addEventListener untuk input
-      // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      input.addEventListener('keyup', (event) => {
-      	let keyCode = event.key;
-        if(keyCode === 'Enter'){
-        	fnClickHandler('enter');
-        }
-      });
+      // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler jug
 
     </script>
   </body>
