@@ -49,7 +49,7 @@
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       function fnClickHandler(toDoItem) {
         
-        if(toDoItem === 'Enter'){
+        if(toDoItem === 'enter'){
 			      let x = input.value;
 			      input.value = '';
 			      output.appendChild(createList(x));
@@ -71,7 +71,7 @@
       input.addEventListener('keyup', (event) => {
       	let keyCode = event.key;
         if(keyCode === 'Enter'){
-        	fnClickHandler(keyCode);
+        	fnClickHandler('enter');
         }
       });
 
