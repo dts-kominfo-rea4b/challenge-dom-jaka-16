@@ -32,20 +32,23 @@
     <div id="app" class="container">
       <h2 id="todo-title" >todo-title</h2>
       <h3 id="todo-subtitle" >todo-subtitle</h3>
-          <input type="text" id="todo-input" >
-          <button type="submit" id="todo-submit" >Submit</button>
-          <ul id="todo-output"></ul>
-    </div>
+        <input type="text" id="todo-input" >
+        <button type="submit" id="todo-submit" >Submit</button>
+         <ul id="todo-output"></ul>
+      </div>
+
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
-  <script>
+    <script>
       // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
     let button = document.querySelector('#todo-submit');
     let input = document.getElementById("todo-input");
     let output = document.querySelector('#todo-output');
-    // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
-    // Fungsi yang digunakan untuk menambahkan tulisan
-    // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-    function fnClickHandler(toDoItem) {
+
+      // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
+      // Fungsi yang digunakan untuk menambahkan tulisan
+      // Jangan ubah cara deklarasi fungsinya, cukup isi saja
+      function fnClickHandler(toDoItem) {
+        
         if(toDOItem === 'Enter'){
 			      let x = input.value;
 			      input.value = '';
@@ -55,25 +58,28 @@
 			      input.value = '';
 			      output.appendChild(createList(x));
         }
-    }
-    // TODO: register event onclick / addEventListener untuk button
-    // akan menjalankan fungsi fnClickHandler
-    button.addEventListener('click', (event) => {
-      	fnClickHandler('click'); });
+       
+      }
 
-    // TODO: register event onkeypress / addEventListener untuk input
-    // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-    input.addEventListener('keyup', (event) => {
+      // TODO: register event onclick / addEventListener untuk button
+      // akan menjalankan fungsi fnClickHandler
+      button.addEventListener('click', (event) => {
+      	fnClickHandler('click');});
+
+      // TODO: register event onkeypress / addEventListener untuk input
+      // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+      input.addEventListener('keyup', (event) => {
       	let keyCode = event.key;
-        fnClickHandler(keyCode);});
+        	fnClickHandler(keyCode);
+      });
 
-  function createList(item){
-	    let li = document.createElement('li');
-	    li.textContent = item;
-	    li.className = 'add-item'
-	    return li
-  }
+      function createList(item){
+	      let li = document.createElement('li');
+	      li.textContent = item;
+	      li.className = 'add-item'
+	      return li
+      }
 
-  </script>
+    </script>
   </body>
 </html>
