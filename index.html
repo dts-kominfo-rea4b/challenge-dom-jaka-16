@@ -48,15 +48,15 @@
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       function fnClickHandler(toDoItem) {
-        let li = document.createElement('li');
+        
         if(toDoItem === 'enter'){
-            li.textContent = input.value;
+			      let x = input.value;
 			      input.value = '';
-			      output.appendChild(li);
+			      output.appendChild(createList(x));
         }else if(toDoItem === 'click'){
-          li.textContent = input.value;
+        	  let x = input.value;
 			      input.value = '';
-			      output.appendChild(li);
+			      output.appendChild(createList(x));
         }
        
       }
@@ -64,16 +64,23 @@
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
       button.addEventListener('click', (event) => {
-        fnClickHandler('click')
-      })
+      	fnClickHandler('click');});
+
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-      input.addEventListener('keypress', (event) => {
+      input.addEventListener('keyup', (event) => {
       	let keyCode = event.key;
         if(keyCode === 'Enter'){
         	fnClickHandler('enter');
         }
       });
+
+      function createList(item){
+	      let li = document.createElement('li');
+	      li.textContent = item;
+	      li.className = 'add-item'
+	      return li
+      }
 
     </script>
   </body>
