@@ -32,7 +32,7 @@
     <div id="app" class="container">
       <h2 id="todo-title" >todo-title</h2>
       <h3 id="todo-subtitle" >todo-subtitle</h3>
-        <input type="text" id="todo-input" >
+        <input type="text" id="todo-input" onkeypress="fnClickHandler(event)" >
         <button type="submit" id="todo-submit" >Submit</button>
          <ul id="todo-output"></ul>
       </div>
@@ -49,7 +49,7 @@
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       function fnClickHandler(toDoItem) {
         let li = document.createElement('li');
-        if(toDoItem === 'enter'){
+        if(toDoItem.key === 'enter'){
             li.textContent = input.value;
 			      input.value = '';
 			      output.appendChild(li);
